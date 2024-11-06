@@ -8,49 +8,49 @@ class ListNode {
     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
 }
 
-class Solution {
-    public ListNode reverseBetween(ListNode head, int left, int right) {
-        ListNode ld = head ;
-        ListNode next_nd ;
-        for(int i = 1 ; i < (left - 1); i ++){
-            ld = ld.next ;
-        }
-        if(left != 1) {
-            ListNode temp = ld;
-            next_nd = ld.next;
-            for (int i = (left - 1); i < right; i++) {
-                ListNode temp_node = next_nd.next;
-                next_nd.next = ld;
-                ld = next_nd;
-                next_nd = temp_node;
-            }
-            temp.next.next = next_nd;
-            temp.next = ld;
-        }
-        else{
-            ListNode temp = ld;
-            next_nd = ld.next;
-            for (int i = (left - 1); i < right; i++) {
-                ListNode temp_node = next_nd.next;
-                next_nd.next = ld;
-                ld = next_nd;
-                next_nd = temp_node;
-            }
-            temp.next.next = next_nd ;
-            head = ld ;
-        }
-        return head ;
-    }
-
-    public void display(ListNode hd){
-        ListNode head = hd ;
-        do{
-            System.out.print(head.val + " ");
-            head = head.next ;
-        }while(head != null) ;
-        System.out.println();
-    }
-}
+//class Solution {
+//    public ListNode reverseBetween(ListNode head, int left, int right) {
+//        ListNode ld = head ;
+//        ListNode next_nd ;
+//        for(int i = 1 ; i < (left - 1); i ++){
+//            ld = ld.next ;
+//        }
+//        if(left != 1) {
+//            ListNode temp = ld;
+//            next_nd = ld.next;
+//            for (int i = (left - 1); i < right; i++) {
+//                ListNode temp_node = next_nd.next;
+//                next_nd.next = ld;
+//                ld = next_nd;
+//                next_nd = temp_node;
+//            }
+//            temp.next.next = next_nd;
+//            temp.next = ld;
+//        }
+//        else{
+//            ListNode temp = ld;
+//            next_nd = ld.next;
+//            for (int i = (left - 1); i < right; i++) {
+//                ListNode temp_node = next_nd.next;
+//                next_nd.next = ld;
+//                ld = next_nd;
+//                next_nd = temp_node;
+//            }
+//            temp.next.next = next_nd ;
+//            head = ld ;
+//        }
+//        return head ;
+//    }
+//
+//    public void display(ListNode hd){
+//        ListNode head = hd ;
+//        do{
+//            System.out.print(head.val + " ");
+//            head = head.next ;
+//        }while(head != null) ;
+//        System.out.println();
+//    }
+//}
 
 public class Reverse_linked_list_2 {
     public static void main(String[] args) {
@@ -68,10 +68,10 @@ public class Reverse_linked_list_2 {
         l5.next = l6 ;
         l6.next = null ;
 
-        Solution ob = new Solution() ;
-        ob.display(l1);
-        l1 = ob.reverseBetween(l1 , 1 , 6) ;
-        ob.display(l1);
+//        Solution ob = new Solution() ;
+//        ob.display(l1);
+//        l1 = ob.reverseBetween(l1 , 1 , 6) ;
+//        ob.display(l1);
 
     }
 }
